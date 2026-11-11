@@ -1,0 +1,14 @@
+global:
+  scrape_interval: 1s
+  scrape_timeout: 900ms
+
+scrape_configs:
+  - job_name: fraud_detector
+    static_configs:
+      - targets: ['fraud_detector:8000']
+  - job_name: score_with_db
+    static_configs:
+      - targets: ['score_with_db:8000']
+  - job_name: node_exporter
+    static_configs:
+      - targets: ['node-exporter:9100']
